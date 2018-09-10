@@ -1,4 +1,0 @@
-'''
-obito
-changed some info
-'''
