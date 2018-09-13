@@ -163,8 +163,9 @@ Disallow: /tmp/
 
 ### robotparser模板 
 
->使用 `robotparser` 模块来解析 robots.txt。<br>
->>`robotparser` 模块提供了一个类，叫做 `RobotFileParser`。它可以根据某网站的 robots.txt 文件来判断一个爬取爬虫是否有权限来爬取这个网页。
+使用 `robotparser` 模块来解析 robots.txt。<br>
+
+`robotparser` 模块提供了一个类，叫做 `RobotFileParser`。它可以根据某网站的 robots.txt 文件来判断一个爬取爬虫是否有权限来爬取这个网页。
 
 |方法|作用|
 |---|---|
