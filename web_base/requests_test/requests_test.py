@@ -22,10 +22,17 @@ titles = re.findall(pattern, r.text)
 print(titles)
 '''
 
-
+'''
 #获取Github的图标
 import requests
 
 r = requests.get('http://github.com/favicon.ico')
 with open('favicon.ico', 'wb') as f:
     f.write(r.content)
+'''
+import requests
+
+r = requests.get('http://www.baidu.com/')
+print(r.cookies)
+for key, value in r.cookies.items():
+    print(key + '=' + value)
