@@ -79,6 +79,9 @@ git config --global user.email "XXXX@XX.com"
 8. (没用上)输入`chmod 700 id_rsa`，更改文件的权限，否则在git  clone的时候会报“Permissions 0664 for '*******/.ssh/id_rsa' are too open.”的错；
 9. 官网上有linux的[Fork a repo教程](https://help.github.com/articles/fork-a-repo/)
 10. （未验证）：Linux下无法新建一个repo，只能对github中已有的repo进行修改。所以，当要新建一个repo时，必须在github.com上新建，再通过linux下的git向此repo中新添内容
+11. 应该还需要安装`vim`作为编辑器。其他部分参考[链接](https://www.cnblogs.com/xd502djj/p/4448491.html)
+12. 每次要进行git操作的时候，需要cd到目录中，
+13. 学习更多的git命令和操作
 
 老师居然还亲自登门来询问情况，虽然只是简单几句，但我没有凑过去，说谎总是不自在的
 
