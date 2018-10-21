@@ -1,3 +1,18 @@
+1. [Mint快捷键](#mint快捷键)
+2. [软件下载](#软件下载)
+3. [学习视频](#学习视频)
+4. [软件配置问题](#软件配置问题)
+    1. [挂载win10硬盘分区 ：链接](#挂载win10硬盘分区-链接)
+    2. [Linux下上DR.COMS上网客户端的方法 链接](#linux下上drcoms上网客户端的方法-链接)
+    3. [安装Anaconda](#安装anaconda)
+    4. [配置Git](#配置git)
+    5. [配置Linux下的百度云下载：](#配置linux下的百度云下载)
+    6. [安装Go语言：链接](#安装go语言链接)
+5. [学习](#学习)
+6. [问题](#问题)
+    1. [VS code插件安装](#vs-code插件安装)
+
+
 ## Mint快捷键
 * 启动终端：Ctrl+Shift+T
 * 启动网页浏览器：Ctrl+Z
@@ -145,6 +160,11 @@ source ~/.bashrc
     - Ctrl+ Shift+[	切换标题（下层）
     - Ctrl + M	切换数学环境
     - Alt + C	选中/取消选中任务列表项
+    - 可用命令
+        - Markdown：创建目录
+        - Markdown：更新目录
+        - Markdown：切换代码范围
+        - Markdown：将当前文档打印为HTML
 - Markdown Preview Github Styling
 - (disable)Markdown Preview Enhance
     - 代码块行数：{.line-numbers}
