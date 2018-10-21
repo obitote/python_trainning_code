@@ -117,7 +117,7 @@ git push origin :the_branch_backup //如果前面都成功了，删除这个备�
 
 
 远程仓库与本地文件修改发生冲突的解决方案：（未试用）
-![解决方案](./photo/conflicted.png)
+![解决方案](https://github.com/obitote/python_trainning_code/blob/master/photo/conflicted.png)
 
 * Github的txt文件包含中文时可能会出现乱码的现象，可以将格式转化为UTF-8的编码格式：具体操作时，可将txt文件另保存为UTF-8编码。
 * 在使用分支时，结束分支转到其他分支或者master时，必须将分支做的修改提交到缓冲区，即：Git commit -m “注释”再切换。
