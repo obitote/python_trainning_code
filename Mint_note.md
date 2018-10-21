@@ -145,8 +145,16 @@ source ~/.bashrc
 - Markdown Preview Enhance
     - 代码块行数：{.line-numbers}
     - 表格：有这种方式：
-  a|b
-  --|--
-  1|1
-  2|2(1)
-  ^|2(2)
+
+a|b
+--|--
+1|1
+2|2(1)
+^|2(2)
+
+```mermaid
+graph LR
+    A --> B;
+    B --> C;
+    C --> A;
+```
