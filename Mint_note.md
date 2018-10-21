@@ -129,10 +129,13 @@ source ~/.bashrc
 - [x] 搜狗输入法乱码问题 [解决](https://blog.csdn.net/s_lisheng/article/details/79620131)
 - [ ] vscode的2个插件学习
 - [ ] 挂载硬盘：能永久挂载，**注意点**文件不要保存到挂载的硬盘中
+- [ ] 琢磨：Markdown Preview Enhance：[链接](https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/)
 
 一直说着不想从事机械行业，到头来面试的也是机械行业，大学开学是嚷嚷着不想当码农，结果临近毕业又琢磨着投软件方面的简历。人呐，想法一直都在变化。
 
 ### VS code插件安装
+- 快捷键：
+    - 打开显示命令面板：Ctrl + Shift + P，F1
 - Markdown All in One
     - 列表可用`-`以及用`Tab`进行缩进
     - Ctrl + B	切换粗体
@@ -142,19 +145,8 @@ source ~/.bashrc
     - Ctrl+ Shift+[	切换标题（下层）
     - Ctrl + M	切换数学环境
     - Alt + C	选中/取消选中任务列表项
-- Markdown Preview Enhance
+- Markdown Preview Github Styling
+- (disable)Markdown Preview Enhance
     - 代码块行数：{.line-numbers}
     - 表格：有这种方式：
-
-a|b
---|--
-1|1
-2|2(1)
-^|2(2)
-
-```mermaid
-graph LR
-    A --> B;
-    B --> C;
-    C --> A;
-```
+    - CriticMarkup：语法，默认是禁止的
