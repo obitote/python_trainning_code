@@ -8,9 +8,11 @@
     4. [配置Git](#配置git)
     5. [配置Linux下的百度云下载：](#配置linux下的百度云下载)
     6. [安装Go语言：链接](#安装go语言链接)
+    7. [安装Texlive](#安装texlive)
 5. [学习](#学习)
 6. [问题](#问题)
     1. [VS code插件安装](#vs-code插件安装)
+    2. [web开发](#web开发)
 
 
 ## Mint快捷键
@@ -119,6 +121,11 @@ source ~/.bashrc
 ```
 4. 根据不同的需要，我们可以使用 apt-get 安装 Go tools：sudo apt-cache search golang
 
+### 安装Texlive
+```
+sudo apt-get install texlive
+```
+
 
 
 ## 学习
@@ -170,3 +177,9 @@ source ~/.bashrc
     - 代码块行数：{.line-numbers}
     - 表格：有这种方式：
     - CriticMarkup：语法，默认是禁止的
+- view in browser:能够将所写的代码运行在浏览器上.
+- Class autocomplete for HTML:自动补齐
+
+### web开发
+- vscode + tslint
+- webstorm
