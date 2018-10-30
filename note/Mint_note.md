@@ -157,7 +157,13 @@ sudo apt-get install texlive
 
 ### VS code插件安装
 - 快捷键：
-    - 打开显示命令面板：Ctrl + Shift + P，F1
+    - 打开显示命令面板：Ctrl + Shift + P或者F1
+    - 命令行更新vscode版本：[来源](https://askubuntu.com/questions/833448/how-to-update-vs-code-on-ubuntu)
+
+```
+wget https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable -O /tmp/code_latest_amd64.deb
+sudo dpkg -i /tmp/code_latest_amd64.deb
+```
 - Markdown All in One
     - 列表可用`-`以及用`Tab`进行缩进
     - Ctrl + B	切换粗体
@@ -179,6 +185,8 @@ sudo apt-get install texlive
     - CriticMarkup：语法，默认是禁止的
 - view in browser:能够将所写的代码运行在浏览器上.
 - Class autocomplete for HTML:自动补齐
+
+
 
 ### web开发
 - vscode + tslint
