@@ -13,6 +13,7 @@
 6. [问题](#问题)
     1. [VS code插件安装](#vs-code插件安装)
     2. [web开发](#web开发)
+    3. [安装g++](#安装g)
 
 
 ## Mint快捷键
@@ -191,3 +192,8 @@ sudo dpkg -i /tmp/code_latest_amd64.deb
 ### web开发
 - vscode + tslint
 - webstorm
+
+### 安装g++
+```
+sudo apt install g++
+```
