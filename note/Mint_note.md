@@ -9,6 +9,7 @@
     5. [配置Linux下的百度云下载：](#配置linux下的百度云下载)
     6. [安装Go语言：链接](#安装go语言链接)
     7. [安装Texlive](#安装texlive)
+    8. [Linux下使用过VScode配置C++](#linux下使用过vscode配置c)
 5. [学习](#学习)
 6. [问题](#问题)
     1. [VS code插件安装](#vs-code插件安装)
@@ -126,7 +127,99 @@ source ~/.bashrc
 ```
 sudo apt-get install texlive
 ```
+### Linux下使用过VScode配置C++
+1. 在插件中心先安装C/C++插件
+2. 编写一个简单的C++程序,名为：`add.cpp`。
+3. **配置智能感知**：由于文件夹的配置信息不完整，我们需要自己添加缺少的配置信息。通过快捷方式`Ctrl+Shift+P`运行`C/CPP: Edit configuration ...`命令添加缺少的信息并生成`c_cpp_properties.json`文件。在Linux系统中，主要是注意`"compilerPath": "/usr/bin/gcc",`，如果你的gcc路径不是这个的话就需要在终端里使用`whereis gcc`去查看gcc的路径。
+```json
+//文件内容修改如下：
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "${workspaceFolder}"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
+``` 
+4. **构建代码**：如果你想从VS Code构建你的应用程序，你需要生成一个tasks.json文件。打开命令面板`Ctrl + Shift + P`。选择`Tasks：Configure Tasks ...`命令，单击从模板创建`tasks.json`文件，您将看到任务运行模板列表,选择`Others`。
+```json
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",   //在lauch.json文件中有用到
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g", "add.cpp" //换程序修改地方1：程序的名字
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
+```
+5. 程序的输出在终端中显示，要在终端向程序输入数据，那么还需要进行一点配置。 
+在命令面板`Ctrl+Shift+P`搜索用户配置，在用户配置文件中，找到`Run Code configuration`下的`code-runner.runInTerminal`，将`"code-runner.runInTerminal":false`复制到右边，并将值改为`true`。**注意：**复制到右边的时候要加上`,`，作为语句的结尾。
+6. 我们将当前页面调整到我们的源程序编辑页面，点击右上角的小三角形，即可运行我们的程序了。到目前为止，add程序就这样顺利运行了。
+7. **调试代码**：为了能够调试，我们还需要生成`launch.json`文件。浏览到调试的窗口，去添加配置。选择`C++(GDB/LIDB)`，生成`launch.json`文件。
+```json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
 
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/add.cpp",    //换程序第二次修改：把add.cpp改为自己的程序名，不建议用main.cpp
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build"
+        }
+    ]
+}
+```
+8. 在进行调试`F5`的时候，一定要将当前页面调整到我们的源程序编辑页面。不然会出错。
+9. 注意点：
+    1. `.vscode`与编写的`.cpp`文件在同一个目录下
+    2. VScode的工作目录必须只能是编写程序的目录，不然编译时会自动在workspace生成`.vscode`文件夹导致重复
+    3. 在写完`add`程序之后，再写其他的程序就可以把`.vscode`直接拿来用，略作修改即可。
+10. 参考链接：[VSCode的第一个C++程序（Linux）](https://blog.csdn.net/qq_34347375/article/details/80851417)
 
 
 ## 学习
@@ -186,6 +279,13 @@ sudo dpkg -i /tmp/code_latest_amd64.deb
     - CriticMarkup：语法，默认是禁止的
 - view in browser:能够将所写的代码运行在浏览器上.
 - Class autocomplete for HTML:自动补齐
+- C++编译
+    - C/C++
+    - Code Runner：快捷键
+        - Ctrl+Alt+M 或者 F1：编译
+        - Ctrl+Alt+J 或者 F1：选择语言
+    - C++ Intellisense:智能感知
+    - Include Autocomplete：自动补全
 
 
 
