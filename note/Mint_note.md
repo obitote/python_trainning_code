@@ -129,10 +129,10 @@ sudo apt-get install texlive
 ```
 ### Linux下使用过VScode配置C++
 1. 在插件中心先安装C/C++插件
-2. 编写一个简单的C++程序,名为：`add.cpp`。
+2. 编写一个简单的C++程序,名为：`add.cpp`
 3. **配置智能感知**：由于文件夹的配置信息不完整，我们需要自己添加缺少的配置信息。通过快捷方式`Ctrl+Shift+P`运行`C/CPP: Edit configuration ...`命令添加缺少的信息并生成`c_cpp_properties.json`文件。在Linux系统中，主要是注意`"compilerPath": "/usr/bin/gcc",`，如果你的gcc路径不是这个的话就需要在终端里使用`whereis gcc`去查看gcc的路径。
 ```json
-//文件内容修改如下：
+//代码修改如下：
 {
     "configurations": [
         {
@@ -156,8 +156,9 @@ sudo apt-get install texlive
     "version": 4
 }
 ``` 
-4. **构建代码**：如果你想从VS Code构建你的应用程序，你需要生成一个tasks.json文件。打开命令面板`Ctrl + Shift + P`。选择`Tasks：Configure Tasks ...`命令，单击从模板创建`tasks.json`文件，您将看到任务运行模板列表,选择`Others`。
+4. **构建代码**：如果你想从VS Code构建你的应用程序，你需要生成一个`tasks.json`文件。打开命令面板`Ctrl + Shift + P`。选择`Tasks：Configure Tasks ...`命令，单击从模板创建`tasks.json`文件，您将看到任务运行模板列表,选择`Others`。
 ```json
+//代码修改如下：
 {
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
@@ -179,10 +180,11 @@ sudo apt-get install texlive
 }
 ```
 5. 程序的输出在终端中显示，要在终端向程序输入数据，那么还需要进行一点配置。 
-在命令面板`Ctrl+Shift+P`搜索用户配置，在用户配置文件中，找到`Run Code configuration`下的`code-runner.runInTerminal`，将`"code-runner.runInTerminal":false`复制到右边，并将值改为`true`。**注意：**复制到右边的时候要加上`,`，作为语句的结尾。
+在命令面板`Ctrl+Shift+P`搜索用户配置，在用户配置文件中，找到`Run Code configuration`下的`code-runner.runInTerminal`，将`"code-runner.runInTerminal":false`复制到右边，并将值改为`true`。**注意：** 复制到右边的时候要加上`,`，作为语句的结尾。
 6. 我们将当前页面调整到我们的源程序编辑页面，点击右上角的小三角形，即可运行我们的程序了。到目前为止，add程序就这样顺利运行了。
 7. **调试代码**：为了能够调试，我们还需要生成`launch.json`文件。浏览到调试的窗口，去添加配置。选择`C++(GDB/LIDB)`，生成`launch.json`文件。
 ```json
+//代码修改如下：
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
