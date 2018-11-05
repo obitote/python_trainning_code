@@ -132,7 +132,67 @@ g++ -o hello main.cpp   #将a.out文件改名为hello
     - if (条件表达式) {语句序列}
     - if (条件表达式) {语句序列1} else {语句序列2}
     - if (条件表达式1) {语句序列1} else if (条件表达式2) {语句序列3} else {语句序列n}
-- 
+```cpp
+/*
+已知2006年12月1日为星期五。编写程序，接受用户输入的1—31之间的整数，按照下述格式将该日星期几信息打印在对应栏下。
+例如，2006年12月1日打印在星期五'Fr'下面：
+*/
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+typedef enum {SUN, MON, TUE, WED, THU, FRI, SAT} WEEKDAY;
+
+int main(){
+    int date;
+    const WEEKDAY date_1 = FRI;
+    WEEKDAY weekday;
+    cout << "The program gets a date(1-31),\n";
+    cout << "and prints a calendar of 2006-12(just the date).\n";
+    cout << "The date:";
+    cin >> date;
+
+    if(date < 1 || date > 31){
+        cout << "Date error!\n";
+        return 1;
+    }
+
+    weekday = (WEEKDAY)((date + (int)date_1 -1) % 7);
+    
+    cout << "Calendar 2006-12\n";
+    cout << "--------------------------\n";
+    cout << "Su  Mo  Tu  We  Th  Fr  Sa\n";
+    cout << "--------------------------\n";
+
+    if (weekday == SUN)         cout << setw(2) << date;
+    else if (weekday == MON)    cout << setw(6) << date;
+    else if (weekday == TUE)    cout << setw(10) << date;
+    else if (weekday == WED)    cout << setw(14) << date;
+    else if (weekday == THU)    cout << setw(18) << date;
+    else if (weekday == FRI)    cout << setw(22) << date;
+    else                        cout << setw(26) << date;
+
+    cout << endl << "--------------------------\n";
+    return 0;
+}
+```
+- switc分支结构：
+    - switch后面的表达式必须是**整型、字符型或者枚举型**
+    - case后面必须为常量表达式，且各个case值必须不同
+    - 若无default分支，且无case分支匹配，则不执行
+    - case分支中的语句可以有多条，不需要花括号
+    - `break`语句的目的是为了终止`switch`语句的执行，如果没有`break`语句，则程序会从指定的`case`分支开始，并在该分支结束后继续执行下去
+```cpp
+switch(表达式)
+{
+    case 常数表达式1:语句序列1;
+    case 常数表达式2:语句序列2;
+    ...
+    case 常数表达式n:语句序列n;
+    default:默认语句序列;
+}
+```
 ### 2.5 break语句
+使用`switch`语句时，记得在`case`的语句结束后加上`break;`
 ### 2.6 循环结构
 ### 2.7 编程实践
