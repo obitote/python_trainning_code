@@ -1,0 +1,19 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",   //在lauch.json文件中有用到
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g", "print_triangle.cpp" //换程序修改地方1：程序的名字
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
