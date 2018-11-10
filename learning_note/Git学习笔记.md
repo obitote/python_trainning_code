@@ -126,3 +126,23 @@ git push origin :the_branch_backup //如果前面都成功了，删除这个备�
 * $ git push -u origin master 上面命令将本地的master分支推送到origin主机，同时指定origin为默认主机，后面就可以不加任何参数使用git push了。
 
 
+## Git学习指南
+### 第二章
+- 对比：`git diff [file]`
+- 删除：`git rm [file]`
+- 显示项目历史：`git log` （所有提交都会按时间顺序被降序排列出来）
+- 提交日志（简版）：`git log --oneline`
+- 提交日志（图形化）：`git log --graph`
+- 创建共享版本:即裸版本库，一个没有工作区的版本库
+```shell
+git clone --bare /projects/first-steps  /project/first-steps-bare.git` 创建共享版本库
+修改foo.txt的内容
+cd /project/first-steps 
+git add foo.txt
+git commit -m 'a change'
+git push /project/first-steps-bare.git master 推送到共享版本库
+cd /project/first-steps-clone
+git pull /project/first-steps-bare.git master 从共享版本库中拉回同步信息
+```
+
+### 第三章

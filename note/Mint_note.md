@@ -254,6 +254,7 @@ sudo apt-get install texlive
 ### VS code插件安装
 - 快捷键：
     - 打开显示命令面板：Ctrl + Shift + P或者F1
+    - 全部替换：Ctrl + F2
     - 命令行更新vscode版本：[来源](https://askubuntu.com/questions/833448/how-to-update-vs-code-on-ubuntu)
 
 ```
